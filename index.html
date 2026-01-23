@@ -1,31 +1,506 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jhanvi Patel | Portfolio</title>
+  <meta name="description" content="Jhanvi Patel — CS Master's student, Web Developer, Aspiring Data Professional. Portfolio, projects, experience, and contact." />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+      --border:#e2e8f0;
+      --accent:#2563eb;
+      --accent-2:#1d4ed8;
+      --shadow: 0 10px 30px rgba(2,6,23,.08);
+      --radius:18px;
+    }
+    [data-theme="dark"]{
+      --bg:#0b1220;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --card:#0f1a2f;
+      --border:#1f2a44;
+      --accent:#60a5fa;
+      --accent-2:#3b82f6;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+
+    .container{max-width:1100px; margin:0 auto; padding:0 18px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      background: var(--accent);
+      color:#fff;
+      border:1px solid transparent;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: var(--accent-2);}
+    .btn.secondary{
+      background: transparent;
+      color: var(--text);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .btn.secondary:hover{transform: translateY(-1px); border-color: var(--accent);}
+
+    /* Navbar */
+    .nav{
+      position: sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none; color: var(--text);
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px; background: var(--accent);
+      box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    .nav-links{
+      display:flex; gap:16px; align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color: var(--muted);
+      font-weight:600;
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      background: color-mix(in srgb, var(--border) 35%, transparent);
+    }
+    .toggle{
+      border:1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 12px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    /* Hero */
+    .hero{padding:56px 0 18px;}
+    .hero-wrap{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:28px;
+      align-items:center;
+    }
+    .kicker{color: var(--muted); font-weight:700; letter-spacing:.2px;}
+    h1{
+      font-size: clamp(32px, 4vw, 52px);
+      line-height:1.1;
+      margin:10px 0 14px;
+    }
+    .subtitle{
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
+    .pill-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
+    .pill{
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 70%, transparent);
+      padding:8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight:700;
+      font-size: 13px;
+    }
+
+    /* Photo card */
+    .photo-card{
+      border:1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .photo-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 25% 20%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 55%),
+        radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--accent-2) 28%, transparent), transparent 60%),
+        color-mix(in srgb, var(--border) 30%, transparent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .photo-wrap img{
+      width: 78%;
+      height: 78%;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 8px solid color-mix(in srgb, var(--bg) 70%, transparent);
+      box-shadow: 0 18px 40px rgba(0,0,0,.12);
+    }
+    .photo-note{
+      margin-top:12px;
+      color: var(--muted);
+      font-weight:700;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* Sections */
+    section{padding: 26px 0;}
+    .section-card{
+      border:1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    h2{margin:0; font-size:22px;}
+    .small{color:var(--muted); font-weight:700; font-size:13px;}
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding:16px;
+      background: color-mix(in srgb, var(--card) 75%, transparent);
+    }
+    .card h3{margin:0 0 6px; font-size:16px;}
+    .card p{margin:0; color: var(--muted);}
+    ul{margin:10px 0 0 18px;}
+    li{margin: 6px 0; color: var(--muted); font-weight:600;}
+    .links a{font-weight:800}
+
+    footer{
+      padding: 28px 0 50px;
+      color: var(--muted);
+      text-align:center;
+      font-weight:700;
+    }
+
+    @media (max-width: 900px){
+      .hero-wrap{grid-template-columns: 1fr;}
+      .two-col{grid-template-columns: 1fr;}
+      .nav-links{gap:8px}
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.6;">
-  <h1>Your Name</h1>
-  <p><b>Role:</b> Data Engineer / Data Analyst / WordPress Developer</p>
 
-  <h2>About</h2>
-  <p>
-    I’m a Master’s student in Computer Science. I build projects in Python, SQL, and web development.
-  </p>
+<body>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><b>P2P File Sharing (Python)</b> — sockets, chunking, peer discovery</li>
-    <li><b>ML Projects</b> — Fashion MNIST experiments, evaluation and reports</li>
-    <li><b>WordPress Websites</b> — gmpharma.us, linenroom.in, betulmultitrade.in</li>
-  </ul>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#home"><span class="dot"></span> Jhanvi Patel</a>
 
-  <h2>Contact</h2>
-  <p>
-    Email: youremail@example.com <br/>
-    LinkedIn: <a href="#">Add your link</a> <br/>
-    GitHub: <a href="#">Add your link</a>
-  </p>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Portfolio</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+          <button class="toggle" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div id="home" class="hero">
+    <div class="container">
+      <div class="hero-wrap">
+        <div>
+          <div class="kicker">Hi 👋 I’m Jhanvi Patel</div>
+          <h1>CS Master’s Student • Web Developer • Aspiring Data Professional</h1>
+          <p class="subtitle">
+            I hold a Bachelor’s degree in Computer Engineering and I’m currently pursuing a Master’s degree
+            in Computer Science at Duquesne University. I have a strong technical foundation in
+            PHP, Python, SQL, JavaScript, HTML, CSS, C++, and C, with professional experience in WordPress and WooCommerce.
+            I’m actively seeking internship opportunities to gain hands-on experience and contribute to innovative projects.
+          </p>
+
+          <div class="cta">
+            <a class="btn" href="#contact">Contact Me →</a>
+            <a class="btn secondary" href="#projects">View Portfolio</a>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">Python</span>
+            <span class="pill">SQL / MySQL</span>
+            <span class="pill">WordPress / WooCommerce</span>
+            <span class="pill">PHP</span>
+            <span class="pill">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-wrap">
+            <!-- Your photo file is profile.jpeg -->
+            <img src="profile.jpeg" alt="Jhanvi Patel profile photo"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;text-align:center;font-weight:800;color:var(--muted)&quot;>Upload a photo named <b>profile.jpeg</b> in your repo<br/>to show it here ✅</div>';">
+          </div>
+          <div class="photo-note">
+            <span>Pittsburgh, PA</span>
+            <span>Open to Internship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>About</h2>
+          <div class="small">Career Objective</div>
+        </div>
+        <p class="subtitle" style="margin:0;">
+          I hold a Bachelor’s degree in Computer Engineering and I am currently pursuing a Master’s degree in Computer Science at Duquesne University.
+          I have professional experience as a web developer, where I specialized in creating dynamic and user-centered web applications.
+          I am passionate about leveraging my skills to solve complex challenges and am actively seeking a summer internship to gain hands-on experience,
+          contribute to innovative projects, and further develop my career in technology.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <div class="small">Technical + Soft Skills</div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li>PHP, Python, SQL</li>
+              <li>JavaScript, HTML, CSS</li>
+              <li>C++, C</li>
+              <li>WordPress, WooCommerce, Shopify</li>
+              <li>MySQL</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>Effective communication and teamwork</li>
+              <li>Time management</li>
+              <li>Strong analytical and problem-solving abilities</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Experience</h2>
+          <div class="small">Work History</div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Topaz Infotech — WordPress Developer</h3>
+            <p>Built WordPress WooCommerce websites and delivered tailored e-commerce solutions.</p>
+            <ul class="links">
+              <li><a href="https://gmpharma.us/" target="_blank" rel="noreferrer">gmpharma.us</a></li>
+              <li><a href="https://linenroom.in/" target="_blank" rel="noreferrer">linenroom.in</a></li>
+              <li><a href="https://betulmultitrade.in/" target="_blank" rel="noreferrer">betulmultitrade.in</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Devine Infosys — Web Developer Intern</h3>
+            <p>Worked with WordPress framework to build responsive and scalable web solutions.</p>
+            <ul>
+              <li>Website design & development</li>
+              <li>Responsive UI implementation</li>
+              <li>Improved understanding of scalable websites</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <div class="small">Highlighted Work</div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Handwritten Digit Recognition</h3>
+            <p>Machine learning project to recognize digits from images and improve classification accuracy.</p>
+          </div>
+
+          <div class="card">
+            <h3>Fake News Detection</h3>
+            <p>NLP project to classify news as real or fake using text processing and ML techniques.</p>
+          </div>
+
+          <div class="card">
+            <h3>WooCommerce Client Websites</h3>
+            <p>Real client e-commerce work: customization, performance optimization, and user-focused UI.</p>
+          </div>
+
+          <div class="card">
+            <h3>Add More Projects</h3>
+            <p>Send your GitHub repo links and I will add clickable project cards here.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Education</h2>
+          <div class="small">Academic Background</div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Duquesne University — Master’s in Computer Science</h3>
+            <p>Deepening knowledge in operating systems, machine learning, and networks.</p>
+          </div>
+          <div class="card">
+            <h3>LDRP Institute of Technology — Bachelor’s in Computer Engineering (2017)</h3>
+            <p>Projects: Handwritten Digit Recognition and Fake News Detection.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <div class="small">Let’s connect</div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:jhanvipatel2706@gmail.com">jhanvipatel2706@gmail.com</a></p>
+          </div>
+          <div class="card">
+            <h3>Phone</h3>
+            <p><a href="tel:+19372411446">+1 (937) 241-1446</a></p>
+          </div>
+          <div class="card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">github.com/Missjhanvi</a></p>
+          </div>
+          <div class="card">
+            <h3>LinkedIn</h3>
+            <p><span style="color:var(--muted);font-weight:700;">Add your LinkedIn link here</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Jhanvi Patel • Built on GitHub Pages
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const btn = document.getElementById("themeBtn");
+    const saved = localStorage.getItem("theme");
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+
+    function updateIcon(){
+      const t = document.documentElement.getAttribute("data-theme");
+      btn.textContent = (t === "dark") ? "☀️" : "🌙";
+    }
+    updateIcon();
+
+    btn.addEventListener("click", () => {
+      const cur = document.documentElement.getAttribute("data-theme");
+      const next = (cur === "dark") ? "" : "dark";
+      if (next) {
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "");
+      }
+      updateIcon();
+    });
+  </script>
+
 </body>
 </html>
