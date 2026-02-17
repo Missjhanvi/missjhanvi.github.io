@@ -211,11 +211,6 @@
       grid-template-columns: 1fr 1fr;
       gap:16px;
     }
-    .three-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:16px;
-    }
     .card{
       border:1px solid var(--border);
       border-radius: 16px;
@@ -248,15 +243,6 @@
     .meta a{color: var(--accent); text-decoration:none; font-weight:900;}
     .meta a:hover{text-decoration:underline;}
 
-    .callout{
-      border:1px dashed color-mix(in srgb, var(--accent) 45%, var(--border));
-      background: color-mix(in srgb, var(--accent) 6%, transparent);
-      border-radius: 16px;
-      padding:14px 16px;
-      color: var(--muted);
-      font-weight:800;
-    }
-
     footer{
       padding: 28px 0 50px;
       color: var(--muted);
@@ -267,7 +253,6 @@
     @media (max-width: 980px){
       .hero-wrap{grid-template-columns: 1fr;}
       .two-col{grid-template-columns: 1fr;}
-      .three-col{grid-template-columns: 1fr;}
       .nav-inner{align-items:flex-start}
       .nav-links{gap:8px}
     }
@@ -305,7 +290,7 @@
           <p class="subtitle">
             MS in Computer Science candidate at Duquesne University (Expected 2026) with hands-on experience building
             <b>SQL data warehouses</b>, <b>ETL pipelines</b>, and <b>dimensional models</b> (Bronze–Silver–Gold).
-            Also experienced in delivering <b>WooCommerce eCommerce websites</b> with performance tuning and secure integrations.
+            Also experienced in delivering <b>WooCommerce eCommerce websites</b> with performance tuning, SEO, and secure integrations.
           </p>
 
           <div class="cta">
@@ -320,7 +305,7 @@
             <span class="pill">ETL • DW • Star Schema</span>
             <span class="pill">Stored Procedures • Optimization</span>
             <span class="pill">Python</span>
-            <span class="pill">WordPress • WooCommerce</span>
+            <span class="pill">WordPress • WooCommerce • SEO</span>
           </div>
 
           <div class="meta">
@@ -332,7 +317,6 @@
 
         <div class="photo-card">
           <div class="photo-wrap">
-            <!-- Your photo file is profile.jpeg -->
             <img src="profile.jpeg" alt="Jhanvi Patel profile photo"
               onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;text-align:center;font-weight:900;color:var(--muted)&quot;>Upload a photo named <b>profile.jpeg</b> in your repo<br/>to show it here ✅</div>';">
 
@@ -361,7 +345,7 @@
             <p>
               I build data solutions using <b>ETL pipelines</b>, <b>data cleaning</b>, and <b>dimensional modeling</b>.
               I’ve designed multi-layer warehouses (Bronze–Silver–Gold), implemented <b>star schema</b>,
-              and automated loading with <b>stored procedures</b> and validation checks.
+              and automated loading using <b>stored procedures</b> with validation checks.
             </p>
             <div class="tag-row">
               <span class="tag">SQL Server</span><span class="tag">ETL</span><span class="tag">Star Schema</span><span class="tag">Data Quality</span>
@@ -371,18 +355,14 @@
           <div class="card">
             <h3>WordPress / WooCommerce</h3>
             <p>
-              I deliver scalable WordPress sites and WooCommerce stores with strong focus on
-              <b>performance</b>, <b>payment integration</b>, and <b>customization</b>.
-              I’ve built real client eCommerce projects and optimized database queries and backend performance.
+              I deliver scalable WordPress sites and WooCommerce stores focused on
+              <b>performance</b>, <b>SEO optimization</b>, <b>payment integration</b>, and <b>customization</b>.
+              I’ve built real client eCommerce projects and improved backend performance using MySQL optimization.
             </p>
             <div class="tag-row">
-              <span class="tag">WooCommerce</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Performance</span>
+              <span class="tag">WooCommerce</span><span class="tag">SEO</span><span class="tag">PHP</span><span class="tag">MySQL</span>
             </div>
           </div>
-        </div>
-
-        <div style="margin-top:14px" class="callout">
-          🎯 Target roles: <b>Data Engineer</b>, <b>SQL Developer</b>, <b>Database Developer</b>, <b>WordPress Developer</b>, <b>WooCommerce / eCommerce Developer</b>
         </div>
 
       </div>
@@ -419,6 +399,7 @@
               <li>Elementor, WPBakery</li>
               <li>Integrations: PayPal, Razorpay, SMTP</li>
               <li>Optimization: Caching, Minification, Image Optimization</li>
+              <li><b>SEO:</b> On-page SEO, Technical SEO basics, speed improvements</li>
               <li>Tools: Git, GitHub, VS Code</li>
             </ul>
           </div>
@@ -459,10 +440,11 @@
         <div class="two-col">
           <div class="card">
             <h3>Topaz Infotech — WordPress Developer (Jan 2023 – Jun 2024)</h3>
-            <p>Delivered production WordPress/WooCommerce websites, optimized performance, and improved backend reliability.</p>
+            <p>Delivered production WordPress/WooCommerce websites, improved performance, SEO, and backend reliability.</p>
             <ul>
               <li>Developed and customized <b>3+ WooCommerce</b> sites for real clients.</li>
-              <li>Improved website load speed by <b>~30%</b> via caching, minification, and media optimization.</li>
+              <li>Improved load speed by <b>~30%</b> via caching, minification, and media optimization.</li>
+              <li>Implemented <b>SEO optimization</b>: on-page SEO, meta tags, headings structure, internal linking, sitemap setup.</li>
               <li>Integrated secure payment gateways and API connections (PayPal / Razorpay).</li>
               <li>Optimized <b>MySQL queries</b> and backend logic to improve performance.</li>
               <li>Configured SMTP for reliable transactional email delivery.</li>
@@ -476,17 +458,14 @@
 
           <div class="card">
             <h3>Devine Infosys — WordPress Intern (Jun 2022 – Dec 2022)</h3>
-            <p>Built responsive UI components and improved mobile usability for WordPress sites.</p>
+            <p>Built responsive UI components and supported performance + SEO improvements for WordPress websites.</p>
             <ul>
               <li>Created responsive layouts using Elementor and modern CSS.</li>
               <li>Configured plugins, menus, theme settings, and backend workflows.</li>
               <li>Improved mobile usability by <b>~25%</b> through UI fixes and responsive adjustments.</li>
+              <li>Assisted with <b>basic SEO tasks</b> (page titles, meta descriptions, alt text, heading hierarchy).</li>
             </ul>
           </div>
-        </div>
-
-        <div class="callout" style="margin-top:16px">
-          💡 Note: If you have any data/SQL internships, TA work, or class assistant roles, share them and I’ll add them here as well.
         </div>
 
       </div>
@@ -499,29 +478,33 @@
       <div class="section-card">
         <div class="section-title">
           <h2>Projects</h2>
-          <div class="small">Data + Web + ML</div>
+          <div class="small">Highlighted Work</div>
         </div>
 
         <div class="two-col">
+
+          <!-- GRADUATION PROJECT (DETAILED) -->
           <div class="card">
-            <h3>SQL Data Warehouse & ETL Pipeline (Bronze–Silver–Gold)</h3>
+            <h3>Graduation Project — SQL Data Warehouse & ETL Pipeline (Bronze–Silver–Gold)</h3>
             <p>
-              Designed a multi-layer data warehouse and implemented automated ETL with validation and performance tuning.
+              Built an end-to-end data warehouse with layered architecture, automated ETL, and star schema analytics-ready design.
             </p>
             <ul>
-              <li>Created Bronze, Silver, and Gold layers for structured data flow.</li>
-              <li>Built ETL workflows for extraction, cleansing, and transformation.</li>
-              <li>Implemented <b>Star Schema</b> with fact & dimension tables.</li>
-              <li>Automated loading using <b>stored procedures</b>.</li>
-              <li>Applied indexing and optimization to improve query performance.</li>
-              <li>Added validation checks for data accuracy and integrity.</li>
+              <li>Designed warehouse layers: <b>Bronze (raw)</b> → <b>Silver (cleaned)</b> → <b>Gold (analytics-ready)</b>.</li>
+              <li>Implemented <b>Star Schema</b> with fact and dimension tables for reporting.</li>
+              <li>Created <b>stored procedures</b> to automate loading and refresh processes.</li>
+              <li>Added <b>data quality checks</b> (null handling, duplicate checks, validation rules).</li>
+              <li>Applied <b>indexing + query tuning</b> to improve performance of analytical queries.</li>
             </ul>
             <div class="tag-row">
-              <span class="tag">SQL Server</span><span class="tag">ETL</span><span class="tag">Star Schema</span><span class="tag">Stored Procedures</span>
+              <span class="tag">SQL Server</span><span class="tag">ETL</span><span class="tag">DW</span><span class="tag">Star Schema</span><span class="tag">Optimization</span>
             </div>
+            <p class="subtitle" style="margin-top:10px;">
+              <b>What I learned:</b> ETL design patterns, dimensional modeling, data quality validation, performance tuning,
+              and designing analytics-ready datasets for reporting.
+            </p>
             <div class="meta">
-              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">View on GitHub</a></span>
-              <span>(Pin the repo + share exact repo link to make this direct)</span>
+              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">GitHub</a></span>
             </div>
           </div>
 
@@ -537,8 +520,7 @@
               <span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Threading</span><span class="tag">Hashing</span>
             </div>
             <div class="meta">
-              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">View on GitHub</a></span>
-              <span>(Share exact repo link for direct button)</span>
+              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">GitHub</a></span>
             </div>
           </div>
 
@@ -554,30 +536,24 @@
               <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Classification</span>
             </div>
             <div class="meta">
-              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">View on GitHub</a></span>
-              <span>(Share exact repo link for direct button)</span>
+              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">GitHub</a></span>
             </div>
           </div>
 
           <div class="card">
             <h3>WooCommerce Client Websites</h3>
-            <p>Delivered real client eCommerce sites with customization and performance improvements.</p>
+            <p>Delivered real client eCommerce sites with customization, performance, SEO, and payment integrations.</p>
             <ul class="links">
               <li><a href="https://gmpharma.us/" target="_blank" rel="noreferrer">Custom Pharma eCommerce Platform (gmpharma.us)</a></li>
               <li><a href="https://linenroom.in/" target="_blank" rel="noreferrer">Textile WooCommerce Store (linenroom.in)</a></li>
               <li><a href="https://betulmultitrade.in/" target="_blank" rel="noreferrer">Product Distribution Website (betulmultitrade.in)</a></li>
             </ul>
             <div class="tag-row">
-              <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">Payments</span><span class="tag">Performance</span>
+              <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">SEO</span><span class="tag">Performance</span>
             </div>
           </div>
-        </div>
 
-        <div class="callout" style="margin-top:16px">
-          ✅ Tip: Pin your <b>top 3 repos</b> on GitHub so recruiters can find them quickly.
-          If you paste the <b>exact GitHub repo links</b> for each project, I’ll update the project buttons to point directly to them.
         </div>
-
       </div>
     </div>
   </section>
@@ -598,7 +574,7 @@
           </div>
           <div class="card">
             <h3>Bachelor’s in Computer Engineering — 2022</h3>
-            <p>Projects: Handwritten Digit Recognition, Fake News Detection, COVID-19 Risk Prediction.</p>
+            <p>Projects: SQL DW/ETL (Graduation), P2P File Sharing, COVID-19 Risk Prediction, Digit Recognition, Fake News Detection.</p>
           </div>
         </div>
 
@@ -632,11 +608,6 @@
             <h3>LinkedIn</h3>
             <p><a href="https://www.linkedin.com/in/jhanvi-patel27062002/" target="_blank" rel="noreferrer">linkedin.com/in/jhanvi-patel27062002</a></p>
           </div>
-        </div>
-
-        <div class="callout" style="margin-top:16px">
-          Want a <b>Download Resume</b> button? Add your resume PDF to the repo (example: <b>Jhanvi_Patel_Resume.pdf</b>)
-          and I’ll link it in the hero section.
         </div>
 
       </div>
