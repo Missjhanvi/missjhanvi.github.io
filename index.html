@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jhanvi Patel | Portfolio</title>
-  <meta name="description" content="Jhanvi Patel — CS Master's student, Web Developer, Aspiring Data Professional. Portfolio, projects, experience, and contact." />
+  <title>Jhanvi Patel | Data Engineer • SQL Developer • WordPress/WooCommerce</title>
+  <meta name="description" content="Jhanvi Patel — MSCS student at Duquesne University. Data Engineering (SQL, ETL, Data Warehouse), and WordPress/WooCommerce development. Projects, experience, and contact." />
 
   <style>
     :root{
@@ -50,9 +49,10 @@
       border:1px solid transparent;
       border-radius: 14px;
       text-decoration:none;
-      font-weight:600;
+      font-weight:700;
       box-shadow: var(--shadow);
       transition: transform .15s ease, background .15s ease;
+      white-space:nowrap;
     }
     .btn:hover{transform: translateY(-1px); background: var(--accent-2);}
     .btn.secondary{
@@ -62,6 +62,14 @@
       box-shadow:none;
     }
     .btn.secondary:hover{transform: translateY(-1px); border-color: var(--accent);}
+
+    .btn.ghost{
+      background: color-mix(in srgb, var(--card) 65%, transparent);
+      color: var(--text);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .btn.ghost:hover{transform: translateY(-1px); border-color: var(--accent);}
 
     /* Navbar */
     .nav{
@@ -73,6 +81,7 @@
     .nav-inner{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
+      gap:12px;
     }
     .brand{
       display:flex; align-items:center; gap:10px;
@@ -84,14 +93,14 @@
       box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 18%, transparent);
     }
     .nav-links{
-      display:flex; gap:16px; align-items:center;
+      display:flex; gap:10px; align-items:center;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
     .nav-links a{
       text-decoration:none;
       color: var(--muted);
-      font-weight:600;
+      font-weight:700;
       padding:8px 10px;
       border-radius:12px;
     }
@@ -106,27 +115,27 @@
       border-radius: 12px;
       padding:8px 10px;
       cursor:pointer;
-      font-weight:700;
+      font-weight:800;
     }
 
     /* Hero */
     .hero{padding:56px 0 18px;}
     .hero-wrap{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.25fr .75fr;
       gap:28px;
       align-items:center;
     }
-    .kicker{color: var(--muted); font-weight:700; letter-spacing:.2px;}
+    .kicker{color: var(--muted); font-weight:800; letter-spacing:.2px;}
     h1{
-      font-size: clamp(32px, 4vw, 52px);
-      line-height:1.1;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height:1.08;
       margin:10px 0 14px;
     }
     .subtitle{
       color: var(--muted);
       font-size: 16px;
-      max-width: 62ch;
+      max-width: 70ch;
     }
     .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
     .pill-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;}
@@ -136,7 +145,7 @@
       padding:8px 12px;
       border-radius: 999px;
       color: var(--muted);
-      font-weight:700;
+      font-weight:800;
       font-size: 13px;
     }
 
@@ -173,7 +182,7 @@
     .photo-note{
       margin-top:12px;
       color: var(--muted);
-      font-weight:700;
+      font-weight:800;
       display:flex;
       justify-content:space-between;
       gap:10px;
@@ -195,11 +204,16 @@
       margin-bottom: 12px;
     }
     h2{margin:0; font-size:22px;}
-    .small{color:var(--muted); font-weight:700; font-size:13px;}
+    .small{color:var(--muted); font-weight:800; font-size:13px;}
 
     .two-col{
       display:grid;
       grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    .three-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap:16px;
     }
     .card{
@@ -211,19 +225,50 @@
     .card h3{margin:0 0 6px; font-size:16px;}
     .card p{margin:0; color: var(--muted);}
     ul{margin:10px 0 0 18px;}
-    li{margin: 6px 0; color: var(--muted); font-weight:600;}
-    .links a{font-weight:800}
+    li{margin: 6px 0; color: var(--muted); font-weight:700;}
+    .links a{font-weight:900}
+
+    .tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+    .tag{
+      font-size:12px; font-weight:900;
+      color: var(--muted);
+      border:1px solid var(--border);
+      padding:6px 10px;
+      border-radius:999px;
+      background: color-mix(in srgb, var(--card) 68%, transparent);
+    }
+
+    .meta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:10px;
+      color: var(--muted);
+      font-weight:800;
+      font-size: 13px;
+    }
+    .meta a{color: var(--accent); text-decoration:none; font-weight:900;}
+    .meta a:hover{text-decoration:underline;}
+
+    .callout{
+      border:1px dashed color-mix(in srgb, var(--accent) 45%, var(--border));
+      background: color-mix(in srgb, var(--accent) 6%, transparent);
+      border-radius: 16px;
+      padding:14px 16px;
+      color: var(--muted);
+      font-weight:800;
+    }
 
     footer{
       padding: 28px 0 50px;
       color: var(--muted);
       text-align:center;
-      font-weight:700;
+      font-weight:800;
     }
 
-    @media (max-width: 900px){
+    @media (max-width: 980px){
       .hero-wrap{grid-template-columns: 1fr;}
       .two-col{grid-template-columns: 1fr;}
+      .three-col{grid-template-columns: 1fr;}
+      .nav-inner{align-items:flex-start}
       .nav-links{gap:8px}
     }
   </style>
@@ -241,7 +286,7 @@
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
-          <a href="#projects">Portfolio</a>
+          <a href="#projects">Projects</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
           <button class="toggle" id="themeBtn" type="button" aria-label="Toggle theme">🌙</button>
@@ -256,25 +301,32 @@
       <div class="hero-wrap">
         <div>
           <div class="kicker">Hi 👋 I’m Jhanvi Patel</div>
-          <h1>CS Master’s Student • Web Developer • Aspiring Data Professional</h1>
+          <h1>Data Engineer • SQL Developer • WordPress/WooCommerce Developer</h1>
           <p class="subtitle">
-            I hold a Bachelor’s degree in Computer Engineering and I’m currently pursuing a Master’s degree
-            in Computer Science at Duquesne University. I have a strong technical foundation in
-            PHP, Python, SQL, JavaScript, HTML, CSS, C++, and C, with professional experience in WordPress and WooCommerce.
-            I’m actively seeking internship opportunities to gain hands-on experience and contribute to innovative projects.
+            MS in Computer Science candidate at Duquesne University (Expected 2026) with hands-on experience building
+            <b>SQL data warehouses</b>, <b>ETL pipelines</b>, and <b>dimensional models</b> (Bronze–Silver–Gold).
+            Also experienced in delivering <b>WooCommerce eCommerce websites</b> with performance tuning and secure integrations.
           </p>
 
           <div class="cta">
             <a class="btn" href="#contact">Contact Me →</a>
-            <a class="btn secondary" href="#projects">View Portfolio</a>
+            <a class="btn secondary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/jhanvi-patel27062002/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
 
           <div class="pill-row">
+            <span class="pill">SQL Server / MySQL</span>
+            <span class="pill">ETL • DW • Star Schema</span>
+            <span class="pill">Stored Procedures • Optimization</span>
             <span class="pill">Python</span>
-            <span class="pill">SQL / MySQL</span>
-            <span class="pill">WordPress / WooCommerce</span>
-            <span class="pill">PHP</span>
-            <span class="pill">JavaScript</span>
+            <span class="pill">WordPress • WooCommerce</span>
+          </div>
+
+          <div class="meta">
+            <span>📍 Pittsburgh, PA</span>
+            <span>📧 <a href="mailto:jhanvipatel2706@gmail.com">jhanvipatel2706@gmail.com</a></span>
+            <span>📱 <a href="tel:+19372411446">+1 (937) 241-1446</a></span>
           </div>
         </div>
 
@@ -282,11 +334,12 @@
           <div class="photo-wrap">
             <!-- Your photo file is profile.jpeg -->
             <img src="profile.jpeg" alt="Jhanvi Patel profile photo"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;text-align:center;font-weight:800;color:var(--muted)&quot;>Upload a photo named <b>profile.jpeg</b> in your repo<br/>to show it here ✅</div>';">
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;padding:18px;text-align:center;font-weight:900;color:var(--muted)&quot;>Upload a photo named <b>profile.jpeg</b> in your repo<br/>to show it here ✅</div>';">
+
           </div>
           <div class="photo-note">
-            <span>Pittsburgh, PA</span>
-            <span>Open to Internship</span>
+            <span>Open to Internships / Entry-level</span>
+            <span>Data • SQL • WordPress</span>
           </div>
         </div>
       </div>
@@ -299,14 +352,39 @@
       <div class="section-card">
         <div class="section-title">
           <h2>About</h2>
-          <div class="small">Career Objective</div>
+          <div class="small">Summary</div>
         </div>
-        <p class="subtitle" style="margin:0;">
-          I hold a Bachelor’s degree in Computer Engineering and I am currently pursuing a Master’s degree in Computer Science at Duquesne University.
-          I have professional experience as a web developer, where I specialized in creating dynamic and user-centered web applications.
-          I am passionate about leveraging my skills to solve complex challenges and am actively seeking a summer internship to gain hands-on experience,
-          contribute to innovative projects, and further develop my career in technology.
-        </p>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Data Engineering / SQL</h3>
+            <p>
+              I build data solutions using <b>ETL pipelines</b>, <b>data cleaning</b>, and <b>dimensional modeling</b>.
+              I’ve designed multi-layer warehouses (Bronze–Silver–Gold), implemented <b>star schema</b>,
+              and automated loading with <b>stored procedures</b> and validation checks.
+            </p>
+            <div class="tag-row">
+              <span class="tag">SQL Server</span><span class="tag">ETL</span><span class="tag">Star Schema</span><span class="tag">Data Quality</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>WordPress / WooCommerce</h3>
+            <p>
+              I deliver scalable WordPress sites and WooCommerce stores with strong focus on
+              <b>performance</b>, <b>payment integration</b>, and <b>customization</b>.
+              I’ve built real client eCommerce projects and optimized database queries and backend performance.
+            </p>
+            <div class="tag-row">
+              <span class="tag">WooCommerce</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Performance</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="callout">
+          🎯 Target roles: <b>Data Engineer</b>, <b>SQL Developer</b>, <b>Database Developer</b>, <b>WordPress Developer</b>, <b>WooCommerce / eCommerce Developer</b>
+        </div>
+
       </div>
     </div>
   </section>
@@ -317,26 +395,50 @@
       <div class="section-card">
         <div class="section-title">
           <h2>Skills</h2>
-          <div class="small">Technical + Soft Skills</div>
+          <div class="small">Tools & Technologies</div>
         </div>
 
         <div class="two-col">
           <div class="card">
-            <h3>Technical Skills</h3>
+            <h3>Data / SQL</h3>
             <ul>
-              <li>PHP, Python, SQL</li>
-              <li>JavaScript, HTML, CSS</li>
-              <li>C++, C</li>
+              <li><b>SQL</b> (Stored Procedures, Joins, CTEs, Window Functions)</li>
+              <li>ETL: Data Extraction, Cleaning, Transformation</li>
+              <li>Data Warehouse: Bronze–Silver–Gold architecture</li>
+              <li>Dimensional Modeling: Star Schema (fact & dimension tables)</li>
+              <li>Performance: Indexing, Query Optimization</li>
+              <li>Databases: SQL Server, MySQL</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Web / WordPress</h3>
+            <ul>
               <li>WordPress, WooCommerce, Shopify</li>
-              <li>MySQL</li>
+              <li>PHP, JavaScript, HTML, CSS</li>
+              <li>Elementor, WPBakery</li>
+              <li>Integrations: PayPal, Razorpay, SMTP</li>
+              <li>Optimization: Caching, Minification, Image Optimization</li>
+              <li>Tools: Git, GitHub, VS Code</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="two-col" style="margin-top:16px">
+          <div class="card">
+            <h3>Programming & Analytics</h3>
+            <ul>
+              <li>Python (Pandas, Scikit-learn, Keras)</li>
+              <li>Machine Learning: Logistic Regression, SVM</li>
+              <li>Version Control: Git / GitHub</li>
             </ul>
           </div>
           <div class="card">
             <h3>Soft Skills</h3>
             <ul>
-              <li>Effective communication and teamwork</li>
+              <li>Communication & teamwork</li>
               <li>Time management</li>
-              <li>Strong analytical and problem-solving abilities</li>
+              <li>Analytical thinking & problem-solving</li>
             </ul>
           </div>
         </div>
@@ -351,13 +453,20 @@
       <div class="section-card">
         <div class="section-title">
           <h2>Experience</h2>
-          <div class="small">Work History</div>
+          <div class="small">Industry Experience</div>
         </div>
 
         <div class="two-col">
           <div class="card">
-            <h3>Topaz Infotech — WordPress Developer</h3>
-            <p>Built WordPress WooCommerce websites and delivered tailored e-commerce solutions.</p>
+            <h3>Topaz Infotech — WordPress Developer (Jan 2023 – Jun 2024)</h3>
+            <p>Delivered production WordPress/WooCommerce websites, optimized performance, and improved backend reliability.</p>
+            <ul>
+              <li>Developed and customized <b>3+ WooCommerce</b> sites for real clients.</li>
+              <li>Improved website load speed by <b>~30%</b> via caching, minification, and media optimization.</li>
+              <li>Integrated secure payment gateways and API connections (PayPal / Razorpay).</li>
+              <li>Optimized <b>MySQL queries</b> and backend logic to improve performance.</li>
+              <li>Configured SMTP for reliable transactional email delivery.</li>
+            </ul>
             <ul class="links">
               <li><a href="https://gmpharma.us/" target="_blank" rel="noreferrer">gmpharma.us</a></li>
               <li><a href="https://linenroom.in/" target="_blank" rel="noreferrer">linenroom.in</a></li>
@@ -366,14 +475,18 @@
           </div>
 
           <div class="card">
-            <h3>Devine Infosys — Web Developer Intern</h3>
-            <p>Worked with WordPress framework to build responsive and scalable web solutions.</p>
+            <h3>Devine Infosys — WordPress Intern (Jun 2022 – Dec 2022)</h3>
+            <p>Built responsive UI components and improved mobile usability for WordPress sites.</p>
             <ul>
-              <li>Website design & development</li>
-              <li>Responsive UI implementation</li>
-              <li>Improved understanding of scalable websites</li>
+              <li>Created responsive layouts using Elementor and modern CSS.</li>
+              <li>Configured plugins, menus, theme settings, and backend workflows.</li>
+              <li>Improved mobile usability by <b>~25%</b> through UI fixes and responsive adjustments.</li>
             </ul>
           </div>
+        </div>
+
+        <div class="callout" style="margin-top:16px">
+          💡 Note: If you have any data/SQL internships, TA work, or class assistant roles, share them and I’ll add them here as well.
         </div>
 
       </div>
@@ -385,30 +498,84 @@
     <div class="container">
       <div class="section-card">
         <div class="section-title">
-          <h2>Portfolio</h2>
-          <div class="small">Highlighted Work</div>
+          <h2>Projects</h2>
+          <div class="small">Data + Web + ML</div>
         </div>
 
         <div class="two-col">
           <div class="card">
-            <h3>Handwritten Digit Recognition</h3>
-            <p>Machine learning project to recognize digits from images and improve classification accuracy.</p>
+            <h3>SQL Data Warehouse & ETL Pipeline (Bronze–Silver–Gold)</h3>
+            <p>
+              Designed a multi-layer data warehouse and implemented automated ETL with validation and performance tuning.
+            </p>
+            <ul>
+              <li>Created Bronze, Silver, and Gold layers for structured data flow.</li>
+              <li>Built ETL workflows for extraction, cleansing, and transformation.</li>
+              <li>Implemented <b>Star Schema</b> with fact & dimension tables.</li>
+              <li>Automated loading using <b>stored procedures</b>.</li>
+              <li>Applied indexing and optimization to improve query performance.</li>
+              <li>Added validation checks for data accuracy and integrity.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">SQL Server</span><span class="tag">ETL</span><span class="tag">Star Schema</span><span class="tag">Stored Procedures</span>
+            </div>
+            <div class="meta">
+              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">View on GitHub</a></span>
+              <span>(Pin the repo + share exact repo link to make this direct)</span>
+            </div>
           </div>
 
           <div class="card">
-            <h3>Fake News Detection</h3>
-            <p>NLP project to classify news as real or fake using text processing and ML techniques.</p>
+            <h3>P2P File Sharing System (Python)</h3>
+            <p>Built a multi-threaded peer-to-peer file sharing system with chunking and integrity checks.</p>
+            <ul>
+              <li>Implemented sockets-based P2P architecture with threading.</li>
+              <li>Chunk-based file transfer and <b>hash verification</b> for integrity.</li>
+              <li>Designed scalable workflows for upload/download between peers.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Threading</span><span class="tag">Hashing</span>
+            </div>
+            <div class="meta">
+              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">View on GitHub</a></span>
+              <span>(Share exact repo link for direct button)</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>COVID-19 Risk Prediction Model</h3>
+            <p>Developed an ML pipeline to predict COVID-19 risk using classification models.</p>
+            <ul>
+              <li>Built preprocessing + training pipeline using Python.</li>
+              <li>Trained models using <b>Logistic Regression</b> and <b>SVM</b>.</li>
+              <li>Achieved <b>~89% accuracy</b> in evaluation.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Classification</span>
+            </div>
+            <div class="meta">
+              <span>🔗 <a href="https://github.com/Missjhanvi" target="_blank" rel="noreferrer">View on GitHub</a></span>
+              <span>(Share exact repo link for direct button)</span>
+            </div>
           </div>
 
           <div class="card">
             <h3>WooCommerce Client Websites</h3>
-            <p>Real client e-commerce work: customization, performance optimization, and user-focused UI.</p>
+            <p>Delivered real client eCommerce sites with customization and performance improvements.</p>
+            <ul class="links">
+              <li><a href="https://gmpharma.us/" target="_blank" rel="noreferrer">Custom Pharma eCommerce Platform (gmpharma.us)</a></li>
+              <li><a href="https://linenroom.in/" target="_blank" rel="noreferrer">Textile WooCommerce Store (linenroom.in)</a></li>
+              <li><a href="https://betulmultitrade.in/" target="_blank" rel="noreferrer">Product Distribution Website (betulmultitrade.in)</a></li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">Payments</span><span class="tag">Performance</span>
+            </div>
           </div>
+        </div>
 
-          <div class="card">
-            <h3>Add More Projects</h3>
-            <p>Send your GitHub repo links and I will add clickable project cards here.</p>
-          </div>
+        <div class="callout" style="margin-top:16px">
+          ✅ Tip: Pin your <b>top 3 repos</b> on GitHub so recruiters can find them quickly.
+          If you paste the <b>exact GitHub repo links</b> for each project, I’ll update the project buttons to point directly to them.
         </div>
 
       </div>
@@ -426,12 +593,12 @@
 
         <div class="two-col">
           <div class="card">
-            <h3>Duquesne University — Master’s in Computer Science</h3>
-            <p>Deepening knowledge in operating systems, machine learning, and networks.</p>
+            <h3>Duquesne University — MS in Computer Science (Expected 2026)</h3>
+            <p>Coursework focus: Operating Systems, Machine Learning, Networks, Databases.</p>
           </div>
           <div class="card">
-            <h3>LDRP Institute of Technology — Bachelor’s in Computer Engineering (2017)</h3>
-            <p>Projects: Handwritten Digit Recognition and Fake News Detection.</p>
+            <h3>Bachelor’s in Computer Engineering — 2022</h3>
+            <p>Projects: Handwritten Digit Recognition, Fake News Detection, COVID-19 Risk Prediction.</p>
           </div>
         </div>
 
@@ -463,8 +630,13 @@
           </div>
           <div class="card">
             <h3>LinkedIn</h3>
-            <p><span style="color:var(--muted);font-weight:700;">Add your LinkedIn link here</span></p>
+            <p><a href="https://www.linkedin.com/in/jhanvi-patel27062002/" target="_blank" rel="noreferrer">linkedin.com/in/jhanvi-patel27062002</a></p>
           </div>
+        </div>
+
+        <div class="callout" style="margin-top:16px">
+          Want a <b>Download Resume</b> button? Add your resume PDF to the repo (example: <b>Jhanvi_Patel_Resume.pdf</b>)
+          and I’ll link it in the hero section.
         </div>
 
       </div>
